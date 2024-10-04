@@ -3,44 +3,67 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define Host = Character("Host")
-define Yessica = Character("Yessica")
-
-image Yessica default = "Yessica_default@3.png"
-image Yessica happy = "Yessica_happy@3.png"
-image Yessica pensive = "Yessica_pensive@3.png"
+define player = Character("[playerName]")
 
 
-image cafe = "Cafe_templateBG.jpg"
+define host = Character("Host")
+define yessica = Character("Yessica")
+define e = Character("Evernight")
+define t = Character("Trissy")
 
-# The game starts here.
+image e = "evernight.png"
+image t = "trissy@2.png"
+
+image yessica default = "Yessica_default@3.png"
+image yessica happy = "Yessica_happy@3.png"
+image yessica pensive = "Yessica_pensive@3.png"
+
+image host = "merlin.png"
+
+image cafe = "cafe_background.jpg"
+image cafe2 = "cafe_bg2.jpg"
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
 
     scene cafe
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    show merlin at left
 
-    show Yessica default
+    host "Hi, welcome to Café [[name]'s Speed Dating Event! Please state your name to register!"
 
-    # These display lines of dialogue.
+    # python:
+    #     playerName = renpy.input("Please input name:", length=12)
+    #     playerName = playerName.strip()
 
-    Yessica "default"
+    
+    # player "my name is [playerName]"
 
-    show Yessica happy
+    # host "Welcome, [playerName]! Please wait inside, the event will begin shortly."
 
-    Yessica "happy"
+    hide merlin
 
-    show Yessica pensive
+    hide cafe with dissolve
 
-    Yessica "Pensive"
+    scene cafe2
 
-    # This ends the game.
+    show yessica default at right
+
+    show trissy
+
+    show evernight at left
+
+    e "hi"
+    
+    menu pick_Date:
+        "who should i pick?"
+
+        "Evernight":
+            jump evernight_date
+        "Trissy":
+            jump trissy_date
+        "Yessica":
+            jump yessica_date
+    
 
     return
