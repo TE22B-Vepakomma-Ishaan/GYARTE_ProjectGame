@@ -2,7 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/test.rpy", line 2: Unexpected indentation at start of file.
+File "game/DateF.rpy", line 12: Line with id brittani_date_980231a4 appears twice. The other line is game/Brittani1.rpy:10
+
+File "game/test1.rpy", line 10: Line with id shalomm_date_84f178f2 appears twice. The other line is game/Shalomm1.rpy:9
+
+File "game/test2.rpy", line 9: Line with id yessica_date_aa9e0190 appears twice. The other line is game/Yessica1.rpy:9
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Oct  4 12:43:34 2024
+Fri Oct 11 12:30:48 2024
